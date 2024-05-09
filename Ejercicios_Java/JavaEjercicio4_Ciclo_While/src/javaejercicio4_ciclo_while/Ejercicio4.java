@@ -3,19 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaaejercicio;
+package javaejercicio4_ciclo_while;
 
 /**
  *
  * @author Marco Sal Ram
  */
-public class JavaAEjercicio {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+public class Ejercicio4 {
+    public static void Ejercicio4(){
+        int i;
+        i = 1;
+        while( i<=10){
+            System.out.println(i);
+            i++;
+        }
     }
-    
 }
