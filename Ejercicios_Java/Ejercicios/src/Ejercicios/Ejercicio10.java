@@ -1,5 +1,5 @@
 
-package javaapplication5;
+package Ejercicios;
 
 import java.util.Scanner;
 
@@ -34,7 +34,6 @@ public class Ejercicio10 {
                     if(retiro > dinero){
                         System.out.println("ERROR");
                         System.out.println("Saldo insuficiente...");
-                        dinero += retiro;
                     }else if(retiro <= dinero){
                     dinero -= retiro;
                     System.out.println("Retiro Exitoso!");

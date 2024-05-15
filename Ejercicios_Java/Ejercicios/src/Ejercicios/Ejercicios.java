@@ -1,7 +1,7 @@
 
-package javaapplication5;
+package Ejercicios;
 
-public class JavaApplication5 {
+public class Ejercicios {
 
     public static void main(String[] args) {
         //Ejercicio5.Ejercicio5();
@@ -9,7 +9,9 @@ public class JavaApplication5 {
         //Ejercicio8.Ejercicio8();
          //Ejercicio9.Ejercicio9();
          //Ejercicio10.Ejercicio10();
-         Ejercicio11.Ejercicio11();
+         //Ejercicio11.Ejercicio11();
+         //Ejercicio12.JOption();
+         Ejercicio13.Array();
     }
     
 }

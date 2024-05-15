@@ -1,5 +1,5 @@
 
-package javaapplication5;
+package Ejercicios;
 
 import java.util.Scanner;
 

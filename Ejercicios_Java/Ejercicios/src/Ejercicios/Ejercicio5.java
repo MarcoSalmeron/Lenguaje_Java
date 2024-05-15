@@ -1,5 +1,5 @@
 
-package javaapplication5;
+package Ejercicios;
 
 
 public class Ejercicio5 {
