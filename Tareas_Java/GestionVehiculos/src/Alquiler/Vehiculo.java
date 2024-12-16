@@ -8,18 +8,10 @@ public class Vehiculo {
     protected String modelo;
     private double precioAlquilerPorDia;
     final  double DESCUENTO_LARGA_DURACION;
-Vehiculo Objeto = new Vehiculo("*Depende el modelo*","Suzuki y Nissan","Ninja y GTR",144.55);
-
-public void detalles(){
-        System.out.println("Dettalles: ");
-        System.out.println("Matriculas: "+Objeto.matricula);
-        System.out.println("Marcas que manejamos: "+Objeto.marca);
-        System.out.println("Modelos: "+Objeto.modelo);
-        System.out.println("\nDesde (Precio Por cada dia):");
-        System.out.println("$"+Objeto.precioAlquilerPorDia);
-        System.out.println("DESCUENTO DE "+Objeto.DESCUENTO_LARGA_DURACION+"% POR 7 DIAS!");
-        System.out.println(Objeto.calcularPrecioAlquiler(5));
-    }
+    private double Total_Factura;
+    
+    //Metodo para Factura
+     Factura factura = new Factura();
     //constructor para iniciar mis atributos//
     public Vehiculo(String matricula, String marca, String modelo, double precioAlquilerPorDia) {
         this.matricula = matricula;
@@ -28,7 +20,7 @@ public void detalles(){
         this.precioAlquilerPorDia = precioAlquilerPorDia;
         this.DESCUENTO_LARGA_DURACION = 9.5;
     }    
-        //metodos//
+        //SET//
 
     public void setMatricula(String matricula) {
         this.matricula = matricula;
@@ -47,7 +39,7 @@ public void detalles(){
         this.precioAlquilerPorDia = precioAlquilerPorDia;
     }
     }
-
+             //GET
     public String getMatricula() {
         return matricula;
     }
@@ -68,14 +60,26 @@ public void detalles(){
         return DESCUENTO_LARGA_DURACION;
     }
     public String calcularPrecioAlquiler(int dias){
-        double presio = precioAlquilerPorDia * dias;
-            if(dias >= 7){
-              double descuento = DESCUENTO_LARGA_DURACION / 100;
-              double resta = descuento * presio;
-              presio = presio - resta;
-              return "El precio por "+dias+" dias (con DESCUENTO) "+presio;
-            } 
-            return "El precio por "+dias+" dias es: "+ presio ;
+        try{
+            double presio = precioAlquilerPorDia * dias;
+            //Si rentan mas de 6 dias se aplica descuento
+            if(dias <= 0 ){
+                 return "ERROR: El valor es Negativo";
+            }else if(dias >= 7){
+                 double descuento = DESCUENTO_LARGA_DURACION / 100;
+                 double resta = descuento * presio;
+                 presio = presio - resta;
+                
+                 return "El precio por "+dias+" dias (con DESCUENTO del 9.5%) "+presio;
+            }
+            //Sumar Factura
+            Total_Factura = factura.calcularTotalconImpuesto(presio);
+            presio += Total_Factura;
+            return "El precio por "+dias+" dias (Mas Impuesto del 15%):\n"+presio;
+         }catch(NumberFormatException e){
+                return "El valor no es numero valido";
+    
+    } 
         }
 }
     
