@@ -10,11 +10,11 @@ public class conexion {
     
     //conectar base de datos//
     Connection conexion = null;
-        private String usuario =  "root";
-        private String contra =  "MrFlippers16";
-        private String BD = "proyecto";
-        private String IP = "localhost";
-        private String Puerto = "3306";
+        private String usuario;
+        private String contra;
+        private String BD;
+        private String IP;
+        private String Puerto;
         //URL a conectar//
         String url = "jdbc:mysql://"+IP+":"+Puerto+"/"+BD;
     
